@@ -1,0 +1,17 @@
+name: "No Changes"
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  no-changes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repo Lockdown
+        uses: dessant/repo-lockdown@v2.2.0
+        with:
+          pr-comment: "There are no changes necessary to this, thank you"
